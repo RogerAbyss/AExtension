@@ -7,6 +7,7 @@
 //
 
 #import "AViewController.h"
+#import <AExtension/AExtension.h>
 
 @interface AViewController ()
 
@@ -17,7 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString* s = @"1.00a";
+    NSLog(@"%@",[s doRegEx:@"[0-9]+([.]{0}|[.]{1}[0-9]+)"]?@"是":@"否");
+    
+    rDefualtExtensionUIViewControllerBackIcon = @"test";
+    
+    [self initNav:@"哈哈"];
+    [self setupRightButton:@"test"];
 }
 
 - (void)didReceiveMemoryWarning

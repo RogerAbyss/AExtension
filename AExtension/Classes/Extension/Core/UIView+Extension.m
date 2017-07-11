@@ -1,29 +1,27 @@
 //
-//  UIView+Tool.m
-//  XilianApp
+//  UIView+Extension.m
+//  AExtension
 //
-//  Created by Abyss on 2017/3/6.
-//  Copyright © 2017年 Chongqing Xilian Technology Dev. All rights reserved.
+//  Created by abyss on 2017/7/11.
+//  Copyright © 2017年 RogerAbyss. All rights reserved.
 //
 
-#import "UIView+Tool.h"
-#import "CRDefines.h"
-#import "CRStyle.h"
+#import "UIView+Extension.h"
 
-#define PIXEL_INTEGRAL(pointValue) pointValue
+CGFloat rDefualtExtensionUIViewCornerRadius = 5;
 
-@implementation UIView (Tool)
+@implementation UIView (Extension)
 
 - (CGPoint)origin
 {
     return self.frame.origin;
 }
 
-- (void)setOrigin: (CGPoint) aPoint
+- (void)setOrigin:(CGPoint)aPoint
 {
     CGRect newframe = self.frame;
     newframe.origin = aPoint;
-    self.frame = newframe;
+    self.frame      = newframe;
 }
 
 - (CGSize)size
@@ -34,8 +32,8 @@
 - (void)setSize: (CGSize) aSize
 {
     CGRect newframe = self.frame;
-    newframe.size = aSize;
-    self.frame = newframe;
+    newframe.size   = aSize;
+    self.frame      = newframe;
 }
 
 - (CGFloat)height
@@ -50,9 +48,9 @@
 
 - (void)setHeight: (CGFloat) newheight
 {
-    CGRect newframe = self.frame;
+    CGRect newframe      = self.frame;
     newframe.size.height = newheight;
-    self.frame = newframe;
+    self.frame           = newframe;
 }
 
 - (void)setH:(CGFloat)h
@@ -72,9 +70,9 @@
 
 - (void)setWidth: (CGFloat) newwidth
 {
-    CGRect newframe = self.frame;
+    CGRect newframe     = self.frame;
     newframe.size.width = newwidth;
-    self.frame = newframe;
+    self.frame          = newframe;
 }
 
 - (void)setW:(CGFloat)w
@@ -94,9 +92,9 @@
 
 - (void)setTop:(CGFloat)newtop
 {
-    CGRect newframe = self.frame;
+    CGRect newframe   = self.frame;
     newframe.origin.y = newtop;
-    self.frame = newframe;
+    self.frame        = newframe;
 }
 
 - (void)setY:(CGFloat)y
@@ -116,9 +114,9 @@
 
 - (void)setLeft: (CGFloat) newleft
 {
-    CGRect newframe = self.frame;
+    CGRect newframe   = self.frame;
     newframe.origin.x = newleft;
-    self.frame = newframe;
+    self.frame        = newframe;
 }
 
 - (void)setX:(CGFloat)x
@@ -133,9 +131,9 @@
 
 - (void)setBottom: (CGFloat) newbottom
 {
-    CGRect newframe = self.frame;
+    CGRect newframe   = self.frame;
     newframe.origin.y = newbottom - self.frame.size.height;
-    self.frame = newframe;
+    self.frame        = newframe;
 }
 
 - (CGFloat)right
@@ -145,10 +143,10 @@
 
 - (void)setRight: (CGFloat) newright
 {
-    CGFloat delta = newright - (self.frame.origin.x + self.frame.size.width);
+    CGFloat delta   = newright - (self.frame.origin.x + self.frame.size.width);
     CGRect newframe = self.frame;
     newframe.origin.x += delta ;
-    self.frame = newframe;
+    self.frame      = newframe;
 }
 
 - (void)centerToParent
@@ -165,15 +163,15 @@
             case UIInterfaceOrientationLandscapeLeft:
             case UIInterfaceOrientationLandscapeRight:
             {
-                self.left = PIXEL_INTEGRAL((self.superview.height / 2.0) - (self.width / 2.0));
-                self.top = PIXEL_INTEGRAL((self.superview.width / 2.0) - (self.height / 2.0));
+                self.left = ((self.superview.height / 2.0) - (self.width / 2.0));
+                self.top = ((self.superview.width / 2.0) - (self.height / 2.0));
                 break;
             }
             case UIInterfaceOrientationPortrait:
             case UIInterfaceOrientationPortraitUpsideDown:
             {
-                self.left = PIXEL_INTEGRAL((self.superview.width / 2.0) - (self.width / 2.0));
-                self.top = PIXEL_INTEGRAL((self.superview.height / 2.0) - (self.height / 2.0));
+                self.left = ((self.superview.width / 2.0) - (self.width / 2.0));
+                self.top = ((self.superview.height / 2.0) - (self.height / 2.0));
                 break;
             }
         }
@@ -198,6 +196,7 @@
     while (self.subviews.count)
     {
         UIView* child = self.subviews.lastObject;
+        
         [child removeFromSuperview];
     }
 }
@@ -206,20 +205,21 @@
 {
     self.layer.masksToBounds = YES;
     
-    self.layer.cornerRadius = rCornerRadius;
+    self.layer.cornerRadius  = rDefualtExtensionUIViewCornerRadius;
 }
 
 - (void)setRoundCornerAll
 {
     self.layer.masksToBounds = YES;
     
-    self.layer.cornerRadius = self.height/2.0;
+    self.layer.cornerRadius  = self.height/2.0;
 }
 
 - (void)setAnimateRotationWith:(CGFloat)rate
 {
     __block UIView* v = self;
-    [UIView animateWithDuration:1 animations:^(){
+    
+    [UIView animateWithDuration:1 animations:^() {
         v.transform = CGAffineTransformMakeRotation(M_PI * rate);
     }];
 }
@@ -228,8 +228,8 @@
 {
     self.layer.masksToBounds = YES;
     
-    self.layer.borderWidth = 1.f;
-    self.layer.borderColor = color.CGColor;
+    self.layer.borderWidth   = 1.f;
+    self.layer.borderColor   = color.CGColor;
 }
 
 - (BOOL) containsSubView:(UIView *)subView
@@ -242,7 +242,8 @@
     return NO;
 }
 
-- (BOOL) containsSubViewOfClassType:(Class)class_r {
+- (BOOL) containsSubViewOfClassType:(Class)class_r
+{
     for (UIView *view in [self subviews]) {
         if ([view isMemberOfClass:class_r]) {
             return YES;

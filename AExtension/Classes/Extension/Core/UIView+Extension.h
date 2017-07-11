@@ -1,14 +1,16 @@
 //
-//  UIView+Tool.h
-//  XilianApp
+//  UIView+Extension.h
+//  AExtension
 //
-//  Created by Abyss on 2017/3/6.
-//  Copyright © 2017年 Chongqing Xilian Technology Dev. All rights reserved.
+//  Created by abyss on 2017/7/11.
+//  Copyright © 2017年 RogerAbyss. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface UIView(Tool)
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIView (Extension)
 
 @property CGSize size;
 
@@ -27,21 +29,23 @@
 @property CGFloat w;
 @property CGFloat h;
 
-/** 轻微圆角 */
 - (void)setRoundCorner;
-/** 圆 */
 - (void)setRoundCornerAll;
-/** 旋转 */
-- (void)setAnimateRotationWith:(CGFloat)rate;
-/** 边界 */
+
 - (void)setBorderWithColor:(UIColor *)color;
-/** 居中 */
+
+- (void)setAnimateRotationWith:(CGFloat)rate;
+
 - (void)centerToParent;
 
 - (void)addSubviews:(UIView *)view,...NS_REQUIRES_NIL_TERMINATION;
 - (void)removeAllSubviews;
 
--(BOOL)containsSubView:(UIView *)subView;
--(BOOL)containsSubViewOfClassType:(Class)anyClass;
+- (BOOL)containsSubView:(UIView *)subView;
+- (BOOL)containsSubViewOfClassType:(Class)anyClass;
 
 @end
+
+UIKIT_EXTERN CGFloat rDefualtExtensionUIViewCornerRadius;
+
+NS_ASSUME_NONNULL_END
