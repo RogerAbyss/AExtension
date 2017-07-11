@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
   AExtension v0.1.0
                        DESC
 
-  s.homepage         = 'http://git.oschina.net/abyssroger/aextension'
+  s.homepage         = 'http://git.oschina.net/abyssroger/AExtension'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RogerAbyss' => 'roger_ren@qq.com' }
-  s.source           = { :git => 'https://git.oschina.net/abyssroger/aextension.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://git.oschina.net/abyssroger/AExtension.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
