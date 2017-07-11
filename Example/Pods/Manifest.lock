@@ -1,0 +1,23 @@
+PODS:
+  - AExtension (0.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - AExtension (from `../`)
+  - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  AExtension:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AExtension: a9b3c154c5f76989c0c529bd513bf62bf495294d
+  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
+
+PODFILE CHECKSUM: ce29ff04673cec04e235fb910966915fbe8e728a
+
+COCOAPODS: 1.2.1
