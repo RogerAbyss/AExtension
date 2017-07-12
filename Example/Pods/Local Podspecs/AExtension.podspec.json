@@ -1,9 +1,9 @@
 {
   "name": "AExtension",
-  "version": "0.1.0",
+  "version": "0.1.1.beta",
   "summary": "AExtension",
   "description": "AExtension v0.1.0",
-  "homepage": "http://git.oschina.net/abyssroger/aextension",
+  "homepage": "http://git.oschina.net/abyssroger/AExtension",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "RogerAbyss": "roger_ren@qq.com"
   },
   "source": {
-    "git": "https://git.oschina.net/abyssroger/aextension.git",
-    "tag": "0.1.0"
+    "git": "https://git.oschina.net/abyssroger/AExtension.git",
+    "tag": "0.1.1.beta"
   },
   "platforms": {
     "ios": "8.0"

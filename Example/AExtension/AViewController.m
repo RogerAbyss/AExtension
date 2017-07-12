@@ -26,6 +26,8 @@
     
     [self initNav:@"哈哈"];
     [self setupRightButton:@"test"];
+    
+    NSLog(@"%@",@"100".money);
 }
 
 - (void)didReceiveMemoryWarning

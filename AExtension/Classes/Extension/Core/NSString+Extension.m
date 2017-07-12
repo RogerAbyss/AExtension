@@ -17,7 +17,7 @@
 
 - (NSString *)money
 {
-    return self.isNumbers?[NSString stringWithFormat:@"%.2lu",(unsigned long)self]:self;
+    return self.isNumbers?[NSString stringWithFormat:@"%.2f",self.doubleValue]:self;
 }
 
 - (BOOL)doRegEx:(NSString *)regex

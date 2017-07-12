@@ -1,5 +1,5 @@
 PODS:
-  - AExtension (0.1.0)
+  - AExtension (0.1.1.beta)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AExtension: 2cd1330ba17c4483525ab39e9eb6804d9b7af127
+  AExtension: 656216d0f5c6c55d4480cd11bcb5df5cf1592ebf
   FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
 
 PODFILE CHECKSUM: ce29ff04673cec04e235fb910966915fbe8e728a
