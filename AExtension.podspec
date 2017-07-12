@@ -28,8 +28,28 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AExtension/Classes/**/*'
-  s.public_header_files = 'AExtension/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'MapKit'
-  
+  s.source_files = 'AExtension/Classes/**/*.{h,m}'
+  s.frameworks = 'UIKit', 'Foundation'
+
+  s.subspec 'Core' do |core|
+    core.source_files = 'AExtension/Classes/Core/*','AExtension/Classes/AExtension.h'
+    core.public_header_files = 'AExtension/Classes/Core/*.h','AExtension/Classes/AExtension.h'
+  end
+
+  s.subspec 'Utils' do |utils|
+    utils.source_files = 'AExtension/Classes/Utils/*'
+    utils.public_header_files = 'AExtension/Classes/Utils/*.h'
+  end
+
+  s.subspec 'Crush' do |crush|
+    crush.source_files = 'AExtension/Classes/Crush/*'
+    crush.public_header_files = 'AExtension/Classes/Crush/*.h'
+  end
+
+  s.subspec 'CommonCrypto' do |commonCrypto|
+    commonCrypto.source_files = 'AExtension/Classes/CommonCrypto/*'
+    commonCrypto.public_header_files = 'AExtension/Classes/CommonCrypto/*.h'
+  end
+
+  s.default_subspec = 'Core','Crush'
 end

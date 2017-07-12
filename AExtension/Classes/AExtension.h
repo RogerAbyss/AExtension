@@ -16,3 +16,12 @@
 #import "UIViewController+Extension.h"
 
 #endif /* AExtension_h */
+
+#import <Foundation/Foundation.h>
+
+@interface AExtension : NSObject
+
++ (BOOL)selfChecking;
+
+@end
+
