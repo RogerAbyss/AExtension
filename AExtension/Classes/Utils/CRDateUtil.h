@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CRDateUtil : NSDate
 @end
 
@@ -55,3 +57,5 @@
 - (BOOL)isYestoday;
 
 @end
+
+NS_ASSUME_NONNULL_END

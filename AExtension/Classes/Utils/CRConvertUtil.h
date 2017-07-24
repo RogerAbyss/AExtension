@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CRConvertUtil : NSObject
 
 + (id)object:(id)object to:(Class)pClass;
@@ -21,3 +23,5 @@
 + (double)objectToDouble:(id)object;
 
 @end
+
+NS_ASSUME_NONNULL_END
