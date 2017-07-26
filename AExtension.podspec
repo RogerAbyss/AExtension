@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AExtension'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'AExtension'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://git.oschina.net/abyssroger/AExtension'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RogerAbyss' => 'roger_ren@qq.com' }
-  s.source           = { :git => 'https://git.oschina.net/abyssroger/AExtension.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://git.oschina.net/rogerabyss/AExtension.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
