@@ -10,9 +10,6 @@
 
 @interface AConfigUtil : NSObject
 
-/** 配置文件 */
-+ (NSDictionary *)config;
-
 /** 取配置, json */
 + (void)loadConfig:(NSString *)file;
 

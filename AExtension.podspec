@@ -34,11 +34,15 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.source_files = 'AExtension/Classes/Core/*','AExtension/Classes/AExtension.h'
     core.public_header_files = 'AExtension/Classes/Core/*.h','AExtension/Classes/AExtension.h'
+
+    core.dependency 'AExtension/Config'
   end
 
   s.subspec 'Utils' do |utils|
     utils.source_files = 'AExtension/Classes/Utils/*'
     utils.public_header_files = 'AExtension/Classes/Utils/*.h'
+
+    utils.dependency 'AExtension/Config'
   end
 
   s.subspec 'Crush' do |crush|
@@ -59,5 +63,10 @@ Pod::Spec.new do |s|
     wrapper.dependency 'AExtension/Utils'
   end
 
-  s.default_subspec = 'Core','Crush','Wrapper','Utils'
+    s.subspec 'Config' do |c|
+        c.source_files = 'AExtension/Classes/Config/*'
+        c.public_header_files = 'AExtension/Classes/Config/*.h'
+    end
+
+  s.default_subspec = 'Core','Crush','Wrapper','Utils','Config'
 end

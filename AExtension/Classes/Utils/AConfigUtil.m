@@ -7,15 +7,12 @@
 //
 
 #import "AConfigUtil.h"
+#import "AConfig.h"
 
-static NSDictionary* config = nil;
+@interface AConfig ()
++ (void)setConfig:(NSDictionary *)config;
+@end
 @implementation AConfigUtil
-
-/** 配置文件 */
-+ (NSDictionary *)config
-{
-    return config?:@{};
-}
 
 /** 取配置, json */
 + (void)loadConfig:(NSString *)file
@@ -24,9 +21,9 @@ static NSDictionary* config = nil;
     NSData* data = [[NSFileManager defaultManager] contentsAtPath:path];
     
     NSError* error = nil;
-    config = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    [AConfig setConfig:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error]];
     
-    NSAssert1(config, @"%@", error);
+    NSAssert1([AConfig config], @"%@", error);
 }
 
 @end
