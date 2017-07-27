@@ -207,7 +207,7 @@ static NSDateFormatter* CRTimeWrapperDateFormatter = nil;
 
 @implementation NSDate (CRTimeWrapper)
 
-- (ATimeWrapper *)wrapper
+- (ATimeWrapper *)timeWrapper
 {
     return [ATimeWrapper wrapperFromDate:self];
 }

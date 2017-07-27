@@ -65,6 +65,6 @@ typedef void(^TimesChangeBlock)(ATimeWrapper *timeWrapper);
 
 @interface NSDate (ATimeWrapper)
 
-- (ATimeWrapper *)wrapper;
+- (ATimeWrapper *)timeWrapper;
 
 @end
