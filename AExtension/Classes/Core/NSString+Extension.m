@@ -31,4 +31,9 @@
     return [self doRegEx:@"[0-9]+([.]{0}|[.]{1}[0-9]+)"];
 }
 
+- (BOOL)isPureNumbers
+{
+    return [self doRegEx:@"[0-9]*"];
+}
+
 @end

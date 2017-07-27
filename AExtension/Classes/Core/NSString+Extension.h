@@ -34,6 +34,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isNumbers;
 
 /**
+ 是否是纯数字
+ 
+ @return 是否是纯数字
+ */
+- (BOOL)isPureNumbers;
+
+/**
  是否满足正则式Match
 
  @param regex 正则表达式

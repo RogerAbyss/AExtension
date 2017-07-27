@@ -6,9 +6,9 @@
 //
 //
 
-#import "CRDateUtil.h"
+#import "ADateUtil.h"
 
-@implementation CRDateUtil
+@implementation ADateUtil
 
 @end
 
@@ -172,19 +172,19 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string)
 
 + (NSInteger)compareFramDate:(NSDate *)startDate unit:(NSCalendarUnit)unit
 {
-    return [CRDateUtil compareFramDate:startDate toDate:[NSDate date] unit:unit];
+    return [ADateUtil compareFramDate:startDate toDate:[NSDate date] unit:unit];
 }
 
 /** 判断是否是今天 */
 - (BOOL)isToday
 {
-    return [CRDateUtil compareFramDate:self unit:NSCalendarUnitDay] == 0;
+    return [ADateUtil compareFramDate:self unit:NSCalendarUnitDay] == 0;
 }
 
 /** 判断是否是昨天 */
 - (BOOL)isYestoday
 {
-    return [CRDateUtil compareFramDate:self unit:NSCalendarUnitDay] == -1;
+    return [ADateUtil compareFramDate:self unit:NSCalendarUnitDay] == -1;
 }
 
 @end
@@ -193,9 +193,9 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string)
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
 
-@interface NSDateComponents (CRDateUtil)
+@interface NSDateComponents (ADateUtil)
 @end
-@implementation NSDateComponents (CRDateUtil)
+@implementation NSDateComponents (ADateUtil)
 
 - (NSInteger)valueForComponent:(NSCalendarUnit)unit
 {

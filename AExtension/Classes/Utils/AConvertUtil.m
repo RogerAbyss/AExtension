@@ -1,6 +1,6 @@
-#import "CRConvertUtil.h"
+#import "AConvertUtil.h"
 
-@implementation CRConvertUtil
+@implementation AConvertUtil
 
 + (id)object:(id)object to:(Class)pClass
 {
@@ -88,7 +88,7 @@
 
 + (BOOL)objectToBool:(id)object
 {
-    NSString* svalue = [CRConvertUtil object:object to:[NSString class]];
+    NSString* svalue = [AConvertUtil object:object to:[NSString class]];
     
     if(svalue)
     {
@@ -99,7 +99,7 @@
         }
     }
     
-    NSNumber* nvalue = [CRConvertUtil object:object to:[NSNumber class]];
+    NSNumber* nvalue = [AConvertUtil object:object to:[NSNumber class]];
     return nvalue.boolValue;
 }
 

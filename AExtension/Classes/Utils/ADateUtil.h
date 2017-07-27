@@ -10,14 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRDateUtil : NSDate
+@interface ADateUtil : NSDate
 @end
 
 
 /** 时间阀值,未超过阀值显示现在时间的表示(单位:秒) */
 #define rPRE_NSDATE_CURRENT         3 
 
-@interface NSDate (CRDateUtil)
+@interface NSDate (ADateUtil)
 
 /** 显示时间差值 EXP: 1分钟以前 */
 + (NSString *)stringForTimeInterval:(NSTimeInterval)seconds;

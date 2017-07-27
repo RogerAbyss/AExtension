@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AExtension'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'AExtension'
 
 # This description is used to generate tags and improve search results.
@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
   AExtension v0.1.0
                        DESC
 
-  s.homepage         = 'http://git.oschina.net/abyssroger/AExtension'
+  s.homepage         = 'http://git.oschina.net/rogerabyss/AExtension'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RogerAbyss' => 'roger_ren@qq.com' }
   s.source           = { :git => 'https://git.oschina.net/rogerabyss/AExtension.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AExtension/Classes/**/*.{h,m}'
+  # s.source_files = 'AExtension/Classes/**/*.{h,m}'
   s.frameworks = 'UIKit', 'Foundation'
 
   s.subspec 'Core' do |core|
@@ -51,5 +51,13 @@ Pod::Spec.new do |s|
     commonCrypto.public_header_files = 'AExtension/Classes/CommonCrypto/*.h'
   end
 
-  s.default_subspec = 'Core','Crush'
+  s.subspec 'Wrapper' do |wrapper|
+    wrapper.source_files = 'AExtension/Classes/Wrapper/*'
+    wrapper.public_header_files = 'AExtension/Classes/Wrapper/*.h'
+
+    wrapper.dependency 'AExtension/Core'
+    wrapper.dependency 'AExtension/Utils'
+  end
+
+  s.default_subspec = 'Core','Crush','Wrapper','Utils'
 end

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRConvertUtil : NSObject
+@interface AConvertUtil : NSObject
 
 + (id)object:(id)object to:(Class)pClass;
 

@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIBarButtonItem (Extension)
 
+/** 文字颜色 */
 @property (nonatomic, strong) UIColor* color UI_APPEARANCE_SELECTOR;
+/** 文字特殊颜色,特殊字用*text* */
 @property (nonatomic, strong) UIColor* specialColor UI_APPEARANCE_SELECTOR;
 
 // image/highlightedImage 支持图片名字/普通文字/特殊文字
