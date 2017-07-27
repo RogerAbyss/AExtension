@@ -11,7 +11,7 @@
 
 CGFloat rDefualtExtensionUIBarButtonItemFont = 12;
 
-@implementation UIBarButtonItem (Extension)
+@implementation UIBarButtonItem (AExtension)
 
 - (UIColor *)color
 {

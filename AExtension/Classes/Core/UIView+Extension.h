@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (Extension)
+@interface UIView (AExtension)
 
 @property CGSize size;
 

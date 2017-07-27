@@ -7,8 +7,9 @@
 //
 
 #import "UIColor+Extension.h"
+#import "AConfigUtil.h"
 
-@implementation UIColor (Extension)
+@implementation UIColor (AExtension)
 
 + (UIColor *)colorWithHex:(NSUInteger)hexValue alpha:(CGFloat)alphaValue
 {
@@ -75,5 +76,41 @@
 {
     return [self colorWithRGB:value Green:value Blue:value alpha:1];
 }
+
++ (UIColor *)topic
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.topic"]];
+}
+
++ (UIColor *)line
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.line"]];
+}
+
++ (UIColor *)background
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.background"]];
+}
+
++ (UIColor *)red
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.red"]];
+}
+
++ (UIColor *)blue
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.blue"]];
+}
+
++ (UIColor *)green
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.green"]];
+}
+
++ (UIColor *)yellow
+{
+    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.yellow"]];
+}
+
 
 @end

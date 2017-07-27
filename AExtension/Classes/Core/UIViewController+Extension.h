@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 // left:(id)sender
 // right:(id)sender
 // arrowIcon: common_arrow_left
-@interface UIViewController (Extension)
+@interface UIViewController (AExtension)
 
 - (void)initNav:(NSString *)title;
 

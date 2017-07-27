@@ -8,7 +8,7 @@
 
 #import "NSString+Extension.h"
 
-@implementation NSString (Extension)
+@implementation NSString (AExtension)
 
 - (NSString *)UTF8encoding
 {

@@ -8,12 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIColor (Extension)
+@interface UIColor (AExtension)
 
 + (UIColor *)colorWithHexString:(NSString *)hex;
 + (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha;
 
 + (UIColor *)colorWithRGB:(CGFloat)red Green:(CGFloat) green Blue:(CGFloat)blue alpha:(CGFloat)alpha;
 + (UIColor *)colorWithSame:(CGFloat)value;
+
++ (UIColor *)topic;
++ (UIColor *)line;
++ (UIColor *)background;
+
++ (UIColor *)red;
++ (UIColor *)blue;
++ (UIColor *)green;
++ (UIColor *)yellow;
 
 @end

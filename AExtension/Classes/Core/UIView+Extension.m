@@ -10,7 +10,7 @@
 
 CGFloat rDefualtExtensionUIViewCornerRadius = 5;
 
-@implementation UIView (Extension)
+@implementation UIView (AExtension)
 
 - (CGPoint)origin
 {

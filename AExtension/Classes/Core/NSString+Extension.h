@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (Extension)
+@interface NSString (AExtension)
 
 /**
  钱的表达,如果字符串返回不是数字,则返回原样

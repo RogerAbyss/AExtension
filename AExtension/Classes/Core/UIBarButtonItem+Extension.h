@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIBarButtonItem (Extension)
+@interface UIBarButtonItem (AExtension)
 
 /** 文字颜色 */
 @property (nonatomic, strong) UIColor* color UI_APPEARANCE_SELECTOR;

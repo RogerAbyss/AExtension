@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (Extension)
+@interface UIImage (AExtension)
 
 // 用法与imageNamed相似,支持class bundle
 + (UIImage *)imageName:(NSString *)name;

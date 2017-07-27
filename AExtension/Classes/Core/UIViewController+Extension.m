@@ -11,7 +11,7 @@
 
 NSString* rDefualtExtensionUIViewControllerBackIcon = @"common_arrow_left";
 
-@implementation UIViewController (Extension)
+@implementation UIViewController (AExtension)
 
 - (void)initNav:(NSString *)title
 {
