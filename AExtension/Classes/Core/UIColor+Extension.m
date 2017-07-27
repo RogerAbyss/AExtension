@@ -7,7 +7,7 @@
 //
 
 #import "UIColor+Extension.h"
-#import "AConfigUtil.h"
+#import "AConfig.h"
 
 @implementation UIColor (AExtension)
 
@@ -79,37 +79,37 @@
 
 + (UIColor *)topic
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.topic"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.topic"]];
 }
 
 + (UIColor *)line
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.line"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.line"]];
 }
 
 + (UIColor *)background
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.background"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.background"]];
 }
 
 + (UIColor *)red
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.red"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.red"]];
 }
 
 + (UIColor *)blue
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.blue"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.blue"]];
 }
 
 + (UIColor *)green
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.green"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.green"]];
 }
 
 + (UIColor *)yellow
 {
-    return [UIColor colorWithHexString:[[AConfigUtil config] objectForKey:@"Color.layer.yellow"]];
+    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.yellow"]];
 }
 
 

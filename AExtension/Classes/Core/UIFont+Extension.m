@@ -7,7 +7,7 @@
 //
 
 #import "UIFont+Extension.h"
-#import "AConfigUtil.h"
+#import "AConfig.h"
 
 @implementation UIFont (AExtension)
 
@@ -18,22 +18,22 @@
 
 + (UIFont *)fontBig
 {
-    return [UIFont fontAt:[[[AConfigUtil config] objectForKey:@"Font.text.big"] integerValue]];
+    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.big"] integerValue]];
 }
 
 + (UIFont *)fontMiddle
 {
-    return [UIFont fontAt:[[[AConfigUtil config] objectForKey:@"Font.text.middle"] integerValue]];
+    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.middle"] integerValue]];
 }
 
 + (UIFont *)fontSmall
 {
-    return [UIFont fontAt:[[[AConfigUtil config] objectForKey:@"Font.text.small"] integerValue]];
+    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.small"] integerValue]];
 }
 
 + (UIFont *)fontMini
 {
-    return [UIFont fontAt:[[[AConfigUtil config] objectForKey:@"Font.text.Mini"] integerValue]];
+    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.Mini"] integerValue]];
 }
 
 @end
