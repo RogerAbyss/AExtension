@@ -12,5 +12,16 @@
 
 /** 配置文件 */
 + (NSDictionary *)config;
+/** 取配置, json */
++ (void)loadConfig:(NSString *)file;
+
+@end
+
+@interface NSDictionary (AConfig)
+
+/**
+ 查看环境
+ */
++ (void)env;
 
 @end

@@ -9,7 +9,6 @@
 #import "ATimeWrapper.h"
 #import "AConvertUtil.h"
 #import "ADateUtil.h"
-#import "NSString+Extension.h"
 
 static NSDateFormatter* CRTimeWrapperDateFormatter = nil;
 @interface ATimeWrapper ()
@@ -131,12 +130,19 @@ static NSDateFormatter* CRTimeWrapperDateFormatter = nil;
         string = @"0";
     }
     
-    if ([string isPureNumbers])
+    if ([ATimeWrapper isPureNumbers:string])
     {
         return [ATimeWrapper wrapperFromTimeInterval:string.longLongValue];
     }
     
     return [ATimeWrapper wrapperFromDateString:string];
+}
+
++ (BOOL)isPureNumbers:(NSString *)string
+{
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"[0-9]*"];
+    
+    return [pre evaluateWithObject:string];
 }
 
 - (instancetype)initWithTimeInterval:(NSTimeInterval)timeInterval

@@ -10,6 +10,7 @@
 
 @interface UIColor (AExtension)
 
+/** hex 取颜色,hex错误会返回nil */
 + (UIColor *)colorWithHexString:(NSString *)hex;
 + (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha;
 

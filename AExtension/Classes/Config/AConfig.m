@@ -24,4 +24,23 @@ static NSDictionary* _config = nil;
     _config = config;
 }
 
++ (void)env
+{
+    NSLog(@"\n\n读取配置=====");
+    NSLog(@"%@",_config?:@{});
+    NSLog(@"\n\n================");
+}
+
+/** 取配置, json */
++ (void)loadConfig:(NSString *)file
+{
+    NSString* path = [[NSBundle mainBundle] pathForResource:file ofType:nil];
+    NSData* data = [[NSFileManager defaultManager] contentsAtPath:path];
+    
+    NSError* error = nil;
+    [AConfig setConfig:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error]];
+    
+    NSAssert1([AConfig config], @"%@", error);
+}
+
 @end

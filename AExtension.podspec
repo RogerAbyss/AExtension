@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AExtension'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'AExtension'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ Pod::Spec.new do |s|
     core.public_header_files = 'AExtension/Classes/Core/*.h','AExtension/Classes/AExtension.h'
 
     core.dependency 'AExtension/Config'
+    core.dependency 'AExtension/Wrapper'
   end
 
   s.subspec 'Utils' do |utils|
@@ -59,7 +60,6 @@ Pod::Spec.new do |s|
     wrapper.source_files = 'AExtension/Classes/Wrapper/*'
     wrapper.public_header_files = 'AExtension/Classes/Wrapper/*.h'
 
-    wrapper.dependency 'AExtension/Core'
     wrapper.dependency 'AExtension/Utils'
   end
 

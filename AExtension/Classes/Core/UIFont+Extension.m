@@ -8,6 +8,7 @@
 
 #import "UIFont+Extension.h"
 #import "AConfig.h"
+#import "ADictionaryWrapper.h"
 
 @implementation UIFont (AExtension)
 
@@ -18,22 +19,22 @@
 
 + (UIFont *)fontBig
 {
-    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.big"] integerValue]];
+    return [UIFont fontAt:[[AConfig config].wrapper getInteger:@"Font.text.big"]];
 }
 
 + (UIFont *)fontMiddle
 {
-    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.middle"] integerValue]];
+    return [UIFont fontAt:[[AConfig config].wrapper getInteger:@"Font.text.middle"]];
 }
 
 + (UIFont *)fontSmall
 {
-    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.small"] integerValue]];
+    return [UIFont fontAt:[[AConfig config].wrapper getInteger:@"Font.text.small"]];
 }
 
 + (UIFont *)fontMini
 {
-    return [UIFont fontAt:[[[AConfig config] objectForKey:@"Font.text.Mini"] integerValue]];
+    return [UIFont fontAt:[[AConfig config].wrapper getInteger:@"Font.text.Mini"]];
 }
 
 @end

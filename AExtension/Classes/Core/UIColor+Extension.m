@@ -8,6 +8,7 @@
 
 #import "UIColor+Extension.h"
 #import "AConfig.h"
+#import "ADictionaryWrapper.h"
 
 @implementation UIColor (AExtension)
 
@@ -40,7 +41,7 @@
     if ([cString hasPrefix:@"#"])
         cString = [cString substringFromIndex:1];
     if ([cString length] != 6)
-        return [UIColor clearColor];
+        return nil;
     
     // Separate into r, g, b substrings
     NSRange range;
@@ -79,37 +80,37 @@
 
 + (UIColor *)topic
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.topic"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.topic"]]?:[UIColor red];
 }
 
 + (UIColor *)line
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.line"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.line"]]?:[UIColor colorWithSame:238];
 }
 
 + (UIColor *)background
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.background"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.background"]]?:[UIColor colorWithSame:244];
 }
 
 + (UIColor *)red
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.red"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.red"]]?:[UIColor colorWithHexString:@"f83e4b"];
 }
 
 + (UIColor *)blue
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.blue"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.blue"]]?:[UIColor colorWithHexString:@"54cef5"];
 }
 
 + (UIColor *)green
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.green"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.green"]]?:[UIColor green];
 }
 
 + (UIColor *)yellow
 {
-    return [UIColor colorWithHexString:[[AConfig config] objectForKey:@"Color.layer.yellow"]];
+    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.yellow"]]?:[UIColor colorWithHexString:@"ffbb55"];
 }
 
 

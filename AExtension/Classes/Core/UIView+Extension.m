@@ -7,8 +7,8 @@
 //
 
 #import "UIView+Extension.h"
-
-CGFloat rDefualtExtensionUIViewCornerRadius = 5;
+#import "AConfig.h"
+#import "ADictionaryWrapper.h"
 
 @implementation UIView (AExtension)
 
@@ -205,7 +205,7 @@ CGFloat rDefualtExtensionUIViewCornerRadius = 5;
 {
     self.layer.masksToBounds = YES;
     
-    self.layer.cornerRadius  = rDefualtExtensionUIViewCornerRadius;
+    self.layer.cornerRadius  = [[AConfig config].wrapper getInteger:@"Style.CornorRadius"];
 }
 
 - (void)setRoundCornerAll
