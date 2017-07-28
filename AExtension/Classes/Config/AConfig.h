@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/** 尽量用宏使用config */
+#define APP_CONFIG [AConfig config]
+
 @interface AConfig : NSObject
 
 /** 配置文件 */

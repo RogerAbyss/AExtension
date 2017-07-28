@@ -205,7 +205,7 @@
 {
     self.layer.masksToBounds = YES;
     
-    self.layer.cornerRadius  = [[AConfig config].wrapper getInteger:@"Style.CornorRadius"];
+    self.layer.cornerRadius  = [APP_CONFIG.wrapper getInteger:@"Style.CornorRadius"];
 }
 
 - (void)setRoundCornerAll

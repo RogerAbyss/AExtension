@@ -80,37 +80,37 @@
 
 + (UIColor *)topic
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.topic"]]?:[UIColor red];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.topic"]]?:[UIColor red];
 }
 
 + (UIColor *)line
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.line"]]?:[UIColor colorWithSame:238];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.line"]]?:[UIColor colorWithSame:238];
 }
 
 + (UIColor *)background
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.background"]]?:[UIColor colorWithSame:244];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.background"]]?:[UIColor colorWithSame:244];
 }
 
 + (UIColor *)red
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.red"]]?:[UIColor colorWithHexString:@"f83e4b"];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.layer.red"]]?:[UIColor colorWithHexString:@"f83e4b"];
 }
 
 + (UIColor *)blue
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.blue"]]?:[UIColor colorWithHexString:@"54cef5"];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.layer.blue"]]?:[UIColor colorWithHexString:@"54cef5"];
 }
 
 + (UIColor *)green
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.green"]]?:[UIColor green];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.layer.green"]]?:[UIColor green];
 }
 
 + (UIColor *)yellow
 {
-    return [UIColor colorWithHexString:[[AConfig config].wrapper getString:@"Color.layer.yellow"]]?:[UIColor colorWithHexString:@"ffbb55"];
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.layer.yellow"]]?:[UIColor colorWithHexString:@"ffbb55"];
 }
 
 

@@ -40,7 +40,7 @@ static NSDictionary* _config = nil;
     NSError* error = nil;
     [AConfig setConfig:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error]];
     
-    NSAssert1([AConfig config], @"%@", error);
+    NSAssert1(APP_CONFIG, @"%@", error);
 }
 
 @end
