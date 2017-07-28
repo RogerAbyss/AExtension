@@ -7,62 +7,89 @@
 //
 
 #import "AUnicodeUtil.h"
+#import <objc/runtime.h>
 
 @implementation AUnicodeUtil
+
++ (NSString *)stringByReplaceUnicode:(NSString *)unicodeString
+{
+    NSMutableString *convertedString = [unicodeString mutableCopy];
+    
+    [convertedString replaceOccurrencesOfString:@"\\U"
+                                     withString:@"\\u"
+                                        options:0
+                                          range:NSMakeRange(0, convertedString.length)];
+    
+    CFStringRef transform = CFSTR("Any-Hex/Java");
+    CFStringTransform((__bridge CFMutableStringRef)convertedString, NULL, transform, YES);
+    
+    return convertedString;
+}
+
 @end
 
-@implementation NSDictionary(AUnicodeUtil)
+@interface NSString (AUnicodeUtil)
+@end
+
+@implementation NSString (AUnicodeUtil)
 #if DEBUG
-- (NSString *)descriptionWithLocale:(id)locale {
++ (void)load
+{
+    Method originalMethod = class_getInstanceMethod([self class], @selector(descriptionWithLocale:indent:));
     
-    NSMutableString *string = [NSMutableString string];
+    Method exchangeMethod = class_getInstanceMethod([self class], @selector(rc_descriptionWithLocale:indent:));
     
-    // 开头有个{
-    [string appendString:@"{\n"];
-    
-    // 遍历所有的键值对
-    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [string appendFormat:@"\t%@", key];
-        [string appendString:@" : "];
-        [string appendFormat:@"%@,\n", obj];
-    }];
-    
-    // 结尾有个}
-    [string appendString:@"}"];
-    
-    // 查找最后一个逗号
-    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
-    if (range.location != NSNotFound)
-        [string deleteCharactersInRange:range];
-    
-    return string;
+    /** 交换方法 */
+    method_exchangeImplementations(originalMethod, exchangeMethod);
+}
+
+- (NSString *)rc_descriptionWithLocale:(id)locale indent:(NSUInteger)level
+{
+    return [AUnicodeUtil stringByReplaceUnicode:[self rc_descriptionWithLocale:locale indent:level]];
 }
 #endif
 @end
 
-@implementation NSArray(AUnicodeUtil)
+@interface NSArray (AUnicodeUtil)
+@end
+
+@implementation NSArray (AUnicodeUtil)
 #if DEBUG
-- (NSString *)descriptionWithLocale:(id)locale
++ (void)load
 {
-    NSMutableString *string = [NSMutableString string];
+    Method originalMethod = class_getInstanceMethod([self class], @selector(descriptionWithLocale:indent:));
     
-    // 开头有个[
-    [string appendString:@"[\n"];
+    Method exchangeMethod = class_getInstanceMethod([self class], @selector(rc_descriptionWithLocale:indent:));
     
-    // 遍历所有的元素
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [string appendFormat:@"\t%@,\n", obj];
-    }];
+    /** 交换方法 */
+    method_exchangeImplementations(originalMethod, exchangeMethod);
+}
+
+- (NSString *)rc_descriptionWithLocale:(id)locale indent:(NSUInteger)level
+{
+    return [AUnicodeUtil stringByReplaceUnicode:[self rc_descriptionWithLocale:locale indent:level]];
+}
+#endif
+@end
+
+@interface NSDictionary (AUnicodeUtil)
+@end
+
+@implementation NSDictionary (AUnicodeUtil)
+#if DEBUG
++ (void)load
+{
+    Method originalMethod = class_getInstanceMethod([self class], @selector(descriptionWithLocale:indent:));
     
-    // 结尾有个]
-    [string appendString:@"]"];
+    Method exchangeMethod = class_getInstanceMethod([self class], @selector(rc_descriptionWithLocale:indent:));
     
-    // 查找最后一个逗号
-    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
-    if (range.location != NSNotFound)
-        [string deleteCharactersInRange:range];
-    
-    return string;
+    /** 交换方法 */
+    method_exchangeImplementations(originalMethod, exchangeMethod);
+}
+
+- (NSString *)rc_descriptionWithLocale:(id)locale indent:(NSUInteger)level
+{
+    return [AUnicodeUtil stringByReplaceUnicode:[self rc_descriptionWithLocale:locale indent:level]];
 }
 #endif
 @end

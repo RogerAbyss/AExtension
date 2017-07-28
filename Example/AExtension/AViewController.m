@@ -30,6 +30,8 @@
     [self setupRightButton:@"test"];
     
     NSLog(@"%@",@"100".money);
+    
+    NSLog(@"%@",@{@"ss":@"中文"});
 }
 
 - (void)didReceiveMemoryWarning

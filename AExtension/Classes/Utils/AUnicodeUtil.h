@@ -14,8 +14,3 @@
  */
 @interface AUnicodeUtil : NSObject
 @end
-
-@interface NSDictionary(AUnicodeUtil)
-@end
-@interface NSArray(UnicodeUtil)
-@end
