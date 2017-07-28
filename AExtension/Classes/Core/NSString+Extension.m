@@ -36,4 +36,15 @@
     return [self doRegEx:@"[0-9]*"];
 }
 
+/**
+ unicode转中文
+ 
+ @return 含有中文
+ */
+- (NSString *)unicode
+{
+    return self;
+}
+
+
 @end

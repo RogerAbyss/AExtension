@@ -32,7 +32,7 @@
     
     if ([cString length] < 6) {
         NSLog(@"输入的16进制颜色(html颜色值)格式不正确");
-        return [UIColor clearColor];
+        return nil;
     }
     
     // strip 0X if it appears

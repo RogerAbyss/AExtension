@@ -27,6 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)UTF8encoding;
 
 /**
+ unicode转中文
+ 
+ @return 含有中文
+ */
+- (NSString *)unicode;
+
+/**
  是否是数字(包括.)
 
  @return 是否是数字

@@ -15,12 +15,13 @@
 
 /** 配置文件 */
 + (NSDictionary *)config;
-/** 取配置, json */
+
+/** 取配置, json
+ 
+ 全局大量使用配置
+ 务必在第一时间调用
+ */
 + (void)loadConfig:(NSString *)file;
-
-@end
-
-@interface NSDictionary (AConfig)
 
 /**
  查看环境
@@ -28,3 +29,4 @@
 + (void)env;
 
 @end
+
