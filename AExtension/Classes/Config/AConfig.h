@@ -16,12 +16,18 @@
 /** 配置文件 */
 + (NSDictionary *)config;
 
+/** 网络配置文件版本号 */
++ (NSString *)netVersion;
+
 /** 取配置, json
  
  全局大量使用配置
  务必在第一时间调用
  */
 + (void)loadConfig:(NSString *)file;
+
+/** 取配置, Data */
++ (void)loadConfigData:(NSData *)data;
 
 /**
  查看环境
