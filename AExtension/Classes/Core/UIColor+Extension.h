@@ -26,4 +26,9 @@
 + (UIColor *)green;
 + (UIColor *)yellow;
 
++ (UIColor *)text;
++ (UIColor *)description;
++ (UIColor *)tip;
+
+
 @end

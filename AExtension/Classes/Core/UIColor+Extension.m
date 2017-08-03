@@ -113,5 +113,21 @@
     return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.layer.yellow"]]?:[UIColor colorWithHexString:@"ffbb55"];
 }
 
++ (UIColor *)text
+{
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.text.title"]]?:[UIColor colorWithHexString:@"272727"];
+}
+
++ (UIColor *)description
+{
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.text.description"]]?:[UIColor colorWithHexString:@"d8d8d8"];
+}
+
++ (UIColor *)tip
+{
+    return [UIColor colorWithHexString:[APP_CONFIG.wrapper getString:@"Color.text.tip"]]?:[UIColor colorWithHexString:@"eaeaea"];
+}
+
+
 
 @end

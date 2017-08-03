@@ -15,7 +15,36 @@ NSString* filePath = @"AFile";
 
 + (NSString *)path
 {
-    return [[NSHomeDirectory() stringByAppendingPathComponent:filePath] stringByAppendingString:[AInfoUtil appVersion]];
+    NSString* path = [[NSHomeDirectory() stringByAppendingPathComponent:filePath] stringByAppendingString:[AInfoUtil appVersion]];
+    
+    NSFileManager* manager = [NSFileManager defaultManager];
+    
+    if(![manager fileExistsAtPath:path])
+    {
+        [manager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    return path;
+}
+
++ (NSString *)configPath
+{
+    return [[AFileUtil path] stringByAppendingPathComponent:@"config.json"];
+}
+
++ (NSURL *)configDownloadURL
+{
+    NSString* URL = [AFileUtil configPath];
+    
+    NSFileManager* manager = [NSFileManager defaultManager];
+    
+    if ([manager fileExistsAtPath:filePath]) {
+        BOOL success = [manager removeItemAtPath:filePath error:nil];
+        
+        NSLog(@"%@",success?@"删除原文件成功":@"删除原文件失败");
+    }
+    
+    return [NSURL fileURLWithPath:URL];
 }
 
 + (NSString *)fullPathWithName:(NSString *)fileName
