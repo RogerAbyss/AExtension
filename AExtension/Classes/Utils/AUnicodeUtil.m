@@ -35,12 +35,15 @@
 #if DEBUG
 + (void)load
 {
-    Method originalMethod = class_getInstanceMethod([self class], @selector(descriptionWithLocale:indent:));
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Method originalMethod = class_getInstanceMethod([self class], @selector(descriptionWithLocale:indent:));
     
-    Method exchangeMethod = class_getInstanceMethod([self class], @selector(rc_descriptionWithLocale:indent:));
+        Method exchangeMethod = class_getInstanceMethod([self class], @selector(rc_descriptionWithLocale:indent:));
     
-    /** 交换方法 */
-    method_exchangeImplementations(originalMethod, exchangeMethod);
+        /** 交换方法 */
+        method_exchangeImplementations(originalMethod, exchangeMethod);
+    });
 }
 
 - (NSString *)rc_descriptionWithLocale:(id)locale indent:(NSUInteger)level
