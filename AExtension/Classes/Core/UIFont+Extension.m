@@ -19,22 +19,22 @@
 
 + (UIFont *)fontBig
 {
-    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.big"]];
+    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.big"]>0?:16];
 }
 
 + (UIFont *)fontMiddle
 {
-    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.middle"]];
+    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.middle"]>0?:14];
 }
 
 + (UIFont *)fontSmall
 {
-    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.small"]];
+    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.small"]>0?:12];
 }
 
 + (UIFont *)fontMini
 {
-    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.Mini"]];
+    return [UIFont fontAt:[APP_CONFIG.wrapper getInteger:@"Font.text.Mini"]>0?:10];
 }
 
 @end
