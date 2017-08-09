@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.author           = { 'RogerAbyss' => 'roger_ren@qq.com' }
   s.source           = { :git => 'https://git.oschina.net/rogerabyss/AExtension.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '7.1'
 
   # s.source_files = 'AExtension/Classes/**/*.{h,m}'
   s.frameworks = 'UIKit', 'Foundation'
