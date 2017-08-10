@@ -8,6 +8,7 @@
 
 #import "AViewController.h"
 #import <AExtension/AExtension.h>
+#import <AExtension/UIViewController+Extension.h>
 
 @interface AViewController ()
 
@@ -23,8 +24,6 @@
     
     NSString* s = @"1.00a";
     NSLog(@"%@",[s doRegEx:@"[0-9]+([.]{0}|[.]{1}[0-9]+)"]?@"是":@"否");
-    
-    rDefualtExtensionUIViewControllerBackIcon = @"test";
     
     [self initNav:@"哈哈"];
     [self setupRightButton:@"test"];
