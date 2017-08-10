@@ -9,17 +9,17 @@
 #import "AMDictionaryWrapper.h"
 #import "AConvertUtil.h"
 
-@interface StackItem : NSObject
+@interface ADictionaryWrapperStackItem : NSObject
 @property (copy, nonatomic) NSString* key;
 @property (retain, nonatomic) NSDictionary* object;
 @end
 
-@implementation StackItem
+@implementation ADictionaryWrapperStackItem
 @synthesize object = _object, key = _key;
 
 + (instancetype) itemFrom:(NSDictionary*)object key:(NSString*)key
 {
-    StackItem* ret = [[StackItem alloc] init];
+    ADictionaryWrapperStackItem* ret = [[ADictionaryWrapperStackItem alloc] init];
     ret.object = object;
     ret.key    = key;
     
@@ -94,8 +94,8 @@
     NSArray* components = [name componentsSeparatedByString:@"."];
     
     NSMutableArray* stack = [[NSMutableArray alloc] init];
-    [stack addObject:[[StackItem alloc] init]];  // Place holder, _dictionary parent
-    [stack addObject:[StackItem itemFrom:self.dictionary key:@""]]; // _dictionary
+    [stack addObject:[[ADictionaryWrapperStackItem alloc] init]];  // Place holder, _dictionary parent
+    [stack addObject:[ADictionaryWrapperStackItem itemFrom:self.dictionary key:@""]]; // _dictionary
     
     NSMutableDictionary* object = (NSMutableDictionary*)_dictionary;
     
@@ -126,7 +126,7 @@
             [self reset:stack at:(int)stack.count-1 key:key value:object];
         }
         
-        [stack addObject:[StackItem itemFrom:object key:key]];
+        [stack addObject:[ADictionaryWrapperStackItem itemFrom:object key:key]];
     }
     
     [self reset:stack at:(int)stack.count-1 key:components.lastObject value:value];
