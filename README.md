@@ -1,2 +1,0 @@
-# AExtension
-AFramework`s Extension.
