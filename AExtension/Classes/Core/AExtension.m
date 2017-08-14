@@ -8,6 +8,11 @@
 
 #import "AExtension.h"
 
+CGSize kScreen()
+{
+    return [UIScreen mainScreen].bounds.size;
+}
+
 @implementation AExtension
 
 + (BOOL)selfChecking

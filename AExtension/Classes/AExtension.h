@@ -23,6 +23,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+CGSize kScreen();
+
 @interface AExtension : NSObject
 
 + (BOOL)selfChecking;
