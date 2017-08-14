@@ -14,6 +14,8 @@
 #import "UIImage+Extension.h"
 #import "UIFont+Extension.h"
 #import "UIColor+Extension.h"
+#import "UIButton+Extension.h"
+#import "UITextFeild+Extension.h"
 
 #endif /* AExtension_h */
 
