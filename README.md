@@ -5,16 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/AExtension.svg?style=flat)](http://cocoapods.org/pods/AExtension)
 [![Platform](https://img.shields.io/cocoapods/p/AExtension.svg?style=flat)](http://cocoapods.org/pods/AExtension)
 
-## Example
+**仍在开发测试中, 尚不稳定！**
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-AExtension is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## Install
 
 ```ruby
 pod "AExtension"

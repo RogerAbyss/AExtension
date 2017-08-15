@@ -48,6 +48,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)doRegEx:(NSString *)regex;
 
+/**
+ 获取宽度
+ */
+- (CGFloat)widthInLabel:(UILabel *)label;
+- (CGFloat)widthFont:(UIFont *)font height:(CGFloat)height;
+
+/**
+ 获取高度
+ */
+- (CGFloat)heightInLabel:(UILabel *)label;
+- (CGFloat)heightFont:(UIFont *)font width:(CGFloat)width;
+
 @end
 
 NS_ASSUME_NONNULL_END

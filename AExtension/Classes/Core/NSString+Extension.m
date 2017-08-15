@@ -36,5 +36,26 @@
     return [self doRegEx:@"[0-9]*"];
 }
 
+- (CGFloat)widthInLabel:(UILabel *)label
+{
+    return [self widthFont:label.font height:label.bounds.size.height];
+}
+
+- (CGFloat)widthFont:(UIFont *)font height:(CGFloat)height
+{
+    NSDictionary *attrs = @{NSFontAttributeName:font};
+    return  [self boundingRectWithSize:CGSizeMake(0, height) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrs context:nil].size.width;
+}
+
+- (CGFloat)heightInLabel:(UILabel *)label
+{
+    return [self heightFont:label.font width:label.bounds.size.width];
+}
+
+- (CGFloat)heightFont:(UIFont *)font width:(CGFloat)width
+{
+    NSDictionary *attrs = @{NSFontAttributeName:font};
+    return  [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrs context:nil].size.width;
+}
 
 @end
