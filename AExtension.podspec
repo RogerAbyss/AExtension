@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AExtension'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = 'AExtension'
 
 # This description is used to generate tags and improve search results.
@@ -73,5 +73,10 @@ Pod::Spec.new do |s|
     nav.public_header_files = 'AExtension/Classes/Navigation/*.h'
   end
 
-  s.default_subspec = 'Core','Crush','Wrapper','Utils','Config','Nav'
+  s.subspec 'Touch' do |touch|
+    touch.source_files = 'AExtension/Classes/Touch/*'
+    touch.public_header_files = 'AExtension/Classes/Touch/*.h'
+  end
+
+  s.default_subspec = 'Core','Crush','Wrapper','Utils','Config','Nav','Touch'
 end

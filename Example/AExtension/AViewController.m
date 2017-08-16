@@ -9,6 +9,7 @@
 #import "AViewController.h"
 #import <AExtension/AExtension.h>
 #import <AExtension/UIViewController+Extension.h>
+#import <AExtension/ATouch+Extension.h>
 
 @interface AViewController ()
 
@@ -31,6 +32,14 @@
     NSLog(@"%@",@"100".money);
     
     NSLog(@"%@",@{@"ss":@"中文"});
+    
+//    [self.view tap:^(id sender) {
+//        NSLog(@"点击");
+//    }];
+    
+    self.view.tap = ^(id sender) {
+        NSLog(@"111");
+    };
 }
 
 - (void)didReceiveMemoryWarning
